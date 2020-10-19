@@ -13255,12 +13255,9 @@ a.anchor-link {
 <h2 id="Plan-du-cours">Plan du cours<a class="anchor-link" href="#Plan-du-cours">&#182;</a></h2><ul>
 <li>Acquisition de données textuelles</li>
 <li>Aparté sur les expressions régulières</li>
-<li>Structuration d'un document numérique</li>
-<li>XML et ses standards<ul>
-<li>XML EAD</li>
-<li>XML TEI</li>
-</ul>
-</li>
+<li>Structuration des données</li>
+<li>XML</li>
+<li>TP : XML TEI</li>
 </ul>
 
 </div>
@@ -13606,24 +13603,123 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Structuration-d'un-document-num&#233;rique">Structuration d'un document num&#233;rique<a class="anchor-link" href="#Structuration-d'un-document-num&#233;rique">&#182;</a></h1>
+<h1 id="Structuation-des-donn&#233;es">Structuation des donn&#233;es<a class="anchor-link" href="#Structuation-des-donn&#233;es">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>📑 La mise en forme des données textuelles permet de faire apparaître la <code>structure logique</code> d'un document :</p>
+<p>Structurer les données contenues dans un document permet :</p>
+<ul>
+<li>de trier les données afin qu'un utilisateur puisse facilement sélectionner celles qui sont importantes ;</li>
+</ul>
+<ul>
+<li>d'organiser les données pour les mettre en rapport les unes avec les autres ;</li>
+</ul>
+<ul>
+<li>de faire ressortir une structure logique qui aide à la mise en forme du document, à sa lecture par un humain ou par la machine ;</li>
+</ul>
+<ul>
+<li>...</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Organiser-les-donn&#233;es-:-CSV-(Comma-Separated-Values)">Organiser les donn&#233;es : CSV (<em>Comma Separated Values</em>)<a class="anchor-link" href="#Organiser-les-donn&#233;es-:-CSV-(Comma-Separated-Values)">&#182;</a></h2><ul>
+<li>1 ligne de texte = 1 ligne de tableau</li>
+<li>1 virgule = 1 nouvelle cellule de tableau</li>
+<li>un ficher csv peut être ouvert avec Excel</li>
+</ul>
+<hr>
+<table>
+<thead><tr>
+<th style="text-align:left">Id_Monographie</th>
+<th style="text-align:left">Id_Enqueté</th>
+<th style="text-align:left">Serie_Tome</th>
+<th style="text-align:left">Prénom</th>
+<th style="text-align:left">Nom</th>
+<th style="text-align:left">Place dans la famille</th>
+<th style="text-align:left">Lieu de naissance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">001a</td>
+<td style="text-align:left">001aE1</td>
+<td style="text-align:left">1-1 (1857)</td>
+<td style="text-align:left">Jean</td>
+<td style="text-align:left">M**</td>
+<td style="text-align:left">chef de famille</td>
+<td style="text-align:left">T** (Aube)</td>
+</tr>
+<tr>
+<td style="text-align:left">001a</td>
+<td style="text-align:left">001aE2</td>
+<td style="text-align:left">1-1 (1857)</td>
+<td style="text-align:left">Marie</td>
+<td style="text-align:left">R**</td>
+<td style="text-align:left">sa femme</td>
+<td style="text-align:left">L** (Meurthe)</td>
+</tr>
+<tr>
+<td style="text-align:left">001a</td>
+<td style="text-align:left">001aE3</td>
+<td style="text-align:left">1-1 (1857)</td>
+<td style="text-align:left">Joseph</td>
+<td style="text-align:left">M**</td>
+<td style="text-align:left">leur fils</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+<pre><code>Id_Monographie,Id_Enqueté,Serie_Tome,Prénom,Nom,Place dans la famille,Lieu de naissance
+001a,001aE1,1-1 (1857),Jean,M**,chef de famille,T** (Aube)
+001a,001aE2,1-1 (1857),Marie,R**,sa femme,L** (Meurthe)
+001a,001aE3,1-1 (1857),Joseph,M**,leur fils,,</code></pre>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Organiser-les-donn&#233;es-:-JSON-(JavaScript-Object-Notation)">Organiser les donn&#233;es : JSON (<em>JavaScript Object Notation</em>)<a class="anchor-link" href="#Organiser-les-donn&#233;es-:-JSON-(JavaScript-Object-Notation)">&#182;</a></h2><ul>
+<li><p>utilisation de structure similaire aux listes et aux dictionnaires en Python</p>
+</li>
+<li><p>Chaque valeur est associée à une étiquette, la structure peut fonctionner en arborescence, à plusieurs niveaux</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="p">{</span><span class="nt">&quot;Id_Monographie&quot;</span><span class="p">:</span><span class="s2">&quot;001a&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Id_Enqueté&quot;</span><span class="p">:</span><span class="s2">&quot;001aE1&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Serie_Tome&quot;</span><span class="p">:</span><span class="s2">&quot;1-1 (1857)&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Prénom&quot;</span><span class="p">:</span><span class="s2">&quot;Jean&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Nom&quot;</span><span class="p">:</span><span class="s2">&quot;M**&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Place dans la famille&quot;</span><span class="p">:</span><span class="s2">&quot;chef de famille&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Lieu de naissance&quot;</span><span class="p">:</span><span class="s2">&quot;T** (Aube)&quot;</span><span class="p">},</span>
+<span class="p">{</span><span class="nt">&quot;Id_Monographie&quot;</span><span class="p">:</span><span class="s2">&quot;001a&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Id_Enqueté&quot;</span><span class="p">:</span><span class="s2">&quot;001aE2&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Serie_Tome&quot;</span><span class="p">:</span><span class="s2">&quot;1-1 (1857)&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Prénom&quot;</span><span class="p">:</span><span class="s2">&quot;Marie&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Nom&quot;</span><span class="p">:</span><span class="s2">&quot;R**&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Place dans la famille&quot;</span><span class="p">:</span><span class="s2">&quot;sa femme&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Lieu de naissance&quot;</span><span class="p">:</span><span class="s2">&quot;L** (Meurthe)&quot;</span><span class="p">},</span>
+<span class="p">{</span><span class="nt">&quot;Id_Monographie&quot;</span><span class="p">:</span><span class="s2">&quot;001a&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Id_Enqueté&quot;</span><span class="p">:</span><span class="s2">&quot;001aE3&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Serie_Tome&quot;</span><span class="p">:</span><span class="s2">&quot;1-1 (1857)&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Prénom&quot;</span><span class="p">:</span><span class="s2">&quot;Joseph&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Nom&quot;</span><span class="p">:</span><span class="s2">&quot;M**&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Place dans la famille&quot;</span><span class="p">:</span><span class="s2">&quot;leur fils&quot;</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;Lieu de naissance&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Structuration-logique">Structuration logique<a class="anchor-link" href="#Structuration-logique">&#182;</a></h2><p>📑 La mise en forme des données textuelles permet de faire apparaître la <code>structure logique</code> d'un document :</p>
 <ul>
 <li>en gras et dans une police plus grande on mettra les titres ;</li>
 <li>en italique on mettra les titres d'ouvrages ou les mots étrangers ;</li>
 <li>entre guillemets on mettra les citations ;</li>
 <li>etc.</li>
 </ul>
-<p>📑 Seule, cette mise en forme n'est pas fiable :</p>
+<p>📑 Mais la mise en forme varie d'un médium, d'un contexte à l'autre et sa signification peut être ambiguë :</p>
 <ul>
-<li>dans certains contextes, on mettra le titre en gras, dans d'autres en italique, dans d'autres on le soulignera, etc.</li>
-<li>au risque qu'il partage des caractéristiques avec d'autres éléments : les liens hypertextes, etc.</li>
+<li>on peut donc indiquer la structure logique sous la forme d'annotations associées à des portions de texte</li>
+<li>cela permet de modifier rapidement la mise en forme associée à tel ou tel élément logique en fonction du contexte éditorial</li>
+<li>il existe plusieurs conventions pour formuler ces annotations </li>
 </ul>
 
 </div>
@@ -13632,20 +13728,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>📑 Quand on structure un document, il est essentiel de faire prévaloir sa fonction logique, plutôt que sa forme.</p>
-<ul>
-<li>cela permet de modifier rapidement tous les éléments appartenant à la même classe d'objets ;</li>
-<li>cela permet de conserver la lisibilité d'un document lorsque les conventions ou le médium changent ;</li>
-</ul>
-<p>📑 Il existe plusieurs conventions ou outils pour annoter la structure logique d'un document.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Titres,-hi&#233;rarchie-et-paragraphes">Titres, hi&#233;rarchie et paragraphes<a class="anchor-link" href="#Titres,-hi&#233;rarchie-et-paragraphes">&#182;</a></h2><ul>
+<h2 id="Structuration-logique-dans-un-&#233;diteur-de-texte">Structuration logique dans un &#233;diteur de texte<a class="anchor-link" href="#Structuration-logique-dans-un-&#233;diteur-de-texte">&#182;</a></h2><ul>
 <li>Dans <code>Microsoft Word</code> ou son équivalent libre <code>LibreOffice Writer</code>, on utilise les (malnommés) <code>Styles</code> pour rendre compte de la structure logique d'un document (cela permet de générer ensuite une table des matières, par exemple)</li>
 </ul>
 <p><img src="../../images/word_styles.pnG" alt="styles dans writer"></p>
@@ -13670,8 +13753,18 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exemple-d'annotation-basique-avec-Markdown">Exemple d'annotation basique avec Markdown<a class="anchor-link" href="#Exemple-d'annotation-basique-avec-Markdown">&#182;</a></h2><p>On peut annoter des éléments de structure logique en même temps que des éléments de mise en forme. L'un et l'autre ne sont pas exclusifs.</p>
+<h2 id="Annotation-de-la-structure-logique-avec-Markdown">Annotation de la structure logique avec Markdown<a class="anchor-link" href="#Annotation-de-la-structure-logique-avec-Markdown">&#182;</a></h2><p>Ⓜ️ <code>Markdown</code> est un langage de balisage léger qui permet d'encoder facilement la structure et certains éléments de mise en forme du texte sans gêner sa lecture. Il a été créé en 2004 par John Gruber et Aaron Swartz (US) ;</p>
+<p>Ⓜ️ Après compilation, on obtient un fichier HTML ou un PDF. Markdown permet donc de créer rapidement des contenus web ou des documents qui restent faciles à lire qu'ils soient compilés ou non ;</p>
+<p>Ⓜ️ Pour rester simples à lire, les annotations de Markdown sont très légères et limitées ;</p>
+<p>🤫 On peut utiliser Markdown ou un système d'annotation similaire dans Whatsapp et Messenger ;</p>
 
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Markdown-en-exemple">Markdown en exemple<a class="anchor-link" href="#Markdown-en-exemple">&#182;</a></h3>
 <pre><code>Non compilé : 
 # Titre 1
 ##### Titre 5
@@ -13691,22 +13784,12 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Markdown">Markdown<a class="anchor-link" href="#Markdown">&#182;</a></h2><p>Ⓜ️ <code>Markdown</code> est un langage de balisage léger qui permet d'encoder facilement la structure et certains éléments de mise en forme du texte sans gêner sa lecture. Il a été créé en 2004 par John Gruber et Aaron Swartz (US) ;</p>
-<p>Ⓜ️ Après compilation, on obtient un fichier HTML ou un PDF. Markdown permet donc de créer rapidement des contenus web ou des documents qui restent faciles à lire qu'ils soient compilés ou non ;</p>
-<p>Ⓜ️ Pour rester simples à lire, les annotations de Markdown sont très légères et limitées ;</p>
-<p>🤫 On peut utiliser Markdown ou un système d'annotation similaire dans Whatsapp et Messenger ;</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="LaTeX">LaTeX<a class="anchor-link" href="#LaTeX">&#182;</a></h2><p>🇱 <code>LaTeX</code> (prononcer "latek") est un langage et un système de composition de documents, bien plus complet que Markdown ;</p>
+<h2 id="Structuration-logique-avec-LaTeX">Structuration logique avec LaTeX<a class="anchor-link" href="#Structuration-logique-avec-LaTeX">&#182;</a></h2><p>🇱 <code>LaTeX</code> (prononcer "latek") est un langage et un système de composition de documents, bien plus complet que Markdown ;</p>
 <p>🇱 Il a été élaboré en 1985 par Leslie Lamport à partir d'un autre langage plus ancien : <code>TeX</code> ;</p>
 <p>🇱 Il est très utilisé dans le domaine des sciences car il a été conçu pour écrire aisément les formules mathématiques ;</p>
 <p>🇱 Un fichier annoté avec <code>LaTeX</code> est plus dur à lire sans compilation car les balises sont plus "invasives". Exemple : <code>\chapter{Titre de chapitre}</code></p>
 <p>🇱 Après compilation, on obtient généralement un fichier PDF, mais il est aussi possible de transformer le texte avant compilation pour créer un fichier HTML, etc.</p>
+<p>🇱  LaTeX ne sert pas qu'à annoter la structuration logique : il prend en charge la mise en forme du document au sens large.</p>
 
 </div>
 </div>
@@ -13714,7 +13797,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Mais-ce-n'est-pas-tout-!-Il-y-a-aussi-XML">Mais ce n'est pas tout ! Il y a aussi XML<a class="anchor-link" href="#Mais-ce-n'est-pas-tout-!-Il-y-a-aussi-XML">&#182;</a></h2><p><img src="../../images/annotation_brain.png" alt="XML c&#39;est encore au-dessus de tout ça"></p>
+<h2 id="Pour-la-structuration-des-donn&#233;es-textuelles,-il-y-a-encore-plus-puissant">Pour la structuration des donn&#233;es textuelles, il y a encore plus puissant<a class="anchor-link" href="#Pour-la-structuration-des-donn&#233;es-textuelles,-il-y-a-encore-plus-puissant">&#182;</a></h2><p><img src="../../images/annotation_brain.png" alt="XML c&#39;est encore au-dessus de tout ça"></p>
 
 </div>
 </div>
@@ -13722,7 +13805,7 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="XML-et-ses-standards">XML et ses standards<a class="anchor-link" href="#XML-et-ses-standards">&#182;</a></h1>
+<h1 id="XML">XML<a class="anchor-link" href="#XML">&#182;</a></h1>
 </div>
 </div>
 </div></section><section>
@@ -13731,7 +13814,14 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Qu'est-ce-que-XML-?">Qu'est-ce que XML ?<a class="anchor-link" href="#Qu'est-ce-que-XML-?">&#182;</a></h2><p>🌳 XML signifie <em>eXtensible Markup Language</em></p>
 <p>🌳 XML est un <strong>langage</strong> de <strong>balisage</strong> générique. On le dit <strong>extensible</strong> car il propose une grammaire générale pour l'organisation du document, mais on peut créer ses propres noms de balises</p>
-<p>🌳 Comme HTML (Hypertext Markup Language), XML est un sous-ensemble du standard SGML (Standard Generalized Markup Language). Ces langages sont faciles à reconnaître : ils utilisent les chevrons (<code>&lt;&gt;</code>) pour former des balises</p>
+<p>🌳 Comme HTML (Hypertext Markup Language), XML est un sous-ensemble du standard SGML (Standard Generalized Markup Language). Ces langages utilisent les chevrons (<code>&lt;&gt;</code>) pour former des balises.</p>
+<p>🌳 XML définit une syntaxe :</p>
+<ul>
+<li>une balise XML est écrite entre chevrons (<code>&lt; nom_de_la_balise &gt;</code>) et entoure généralement un contenu ;</li>
+<li>une balise <strong>ouverte</strong> (<code>&lt;slide&gt;</code>) doit donc être <strong>fermée</strong> (<code>&lt;/slide&gt;</code>);</li>
+<li>une balise peut-être vide : <code>&lt;nothing&gt;&lt;/nothing&gt;</code>, ce qui peut aussi s'écrire : <code>&lt;nothing/&gt;</code></li>
+<li>un commentaire est écrit entre <code>&lt;!-- ... --&gt;</code> ;</li>
+</ul>
 
 </div>
 </div>
@@ -13739,7 +13829,45 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>🌳 Un fichier XML est plusieurs choses :</p>
+<h2 id="XML-:-un-exemple">XML : un exemple<a class="anchor-link" href="#XML-:-un-exemple">&#182;</a></h2><ul>
+<li><code>&lt;slide&gt;</code> est une <strong>balise</strong> ou un élément</li>
+<li><code>slide</code> est un <strong>nom</strong> de balise</li>
+<li>"Qu'est-ce que XML ?" est le contenu de la balise "titre"</li>
+<li><code>n</code> est un <strong>attribut</strong> de la balise "line"</li>
+<li><code>001</code> est la <strong>valeur</strong> de l'attribut "n"</li>
+</ul>
+<hr>
+<div class="highlight"><pre><span></span><span class="nt">&lt;slide&gt;</span>
+    <span class="nt">&lt;titre&gt;</span>Qu&#39;est-ce que XML ?<span class="nt">&lt;/titre&gt;</span>
+    <span class="nt">&lt;para&gt;</span>
+        <span class="nt">&lt;line</span> <span class="na">n=</span><span class="s">&quot;001&quot;</span><span class="nt">&gt;</span>🌳 XML signifie <span class="nt">&lt;anglais&gt;</span>eXtensible Markup Language<span class="nt">&lt;/anglais&gt;&lt;/line&gt;</span>
+        <span class="nt">&lt;line</span> <span class="na">n=</span><span class="s">&quot;002&quot;</span><span class="nt">&gt;</span>🌳 XML est un <span class="nt">&lt;gras&gt;</span>langage<span class="nt">&lt;/gras&gt;</span> de <span class="nt">&lt;gras&gt;</span>balisage<span class="nt">&lt;/gras&gt;</span> générique. On le dit <span class="nt">&lt;gras&gt;</span>extensible<span class="nt">&lt;/gras&gt;</span> car il propose une grammaire générale pour l&#39;organisation du document, mais on peut créer ses propres noms de balises<span class="nt">&lt;/line&gt;</span>
+    <span class="nt">&lt;/para&gt;</span>
+<span class="nt">&lt;/slide&gt;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="XML-et-les-standards">XML et les standards<a class="anchor-link" href="#XML-et-les-standards">&#182;</a></h2><p>🌳 XML ne définit pas de vocabulaire : il n'indique pas quel nom doit être donné à une balise : <code>&lt;paragraph&gt;</code>, <code>&lt;paragraphe&gt;</code>, <code>&lt;para&gt;</code>, <code>&lt;para_ph&gt;</code>, <code>&lt;p&gt;</code> sont tous des noms de balises valides ;</p>
+<p>🌳 Ce sont les <code>standards</code> qui définissent un vocabulaire (un ensemble de nom de balise) et des règles de compositions :</p>
+<ul>
+<li><a href="https://tei-c.org/about/"><code>XML TEI</code></a> (<em>Text Encoding Initiative</em>) - description de documents textuels (1987)</li>
+<li><a href="https://www.loc.gov/ead/"><code>XML EAD</code></a> (<em>Encoded Archival Description</em>) - description archivistique (1998)</li>
+<li><a href="https://www.loc.gov/standards/alto/"><code>XML ALTO</code></a> (<em>Analysed Layout and Text Object</em>) - description de la mise en page et du contenu d'un texte transcrit automatiquement (2004)</li>
+<li><a href="https://www.w3.org/TR/SVG2/Overview.html"><code>XML SVG</code></a> (<em>Scalable Vector Graphics</em>) - descriptions d'images vectorielles (1999)</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Concepts-et-outils">Concepts et outils<a class="anchor-link" href="#Concepts-et-outils">&#182;</a></h2><p>🌳 Un fichier XML est plusieurs choses :</p>
 <ul>
 <li>un fichier de texte</li>
 <li>un arbre composé d'éléments hiérarchisés</li>
@@ -13754,28 +13882,81 @@ a.anchor-link {
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="TP-:-XML-TEI">TP : XML TEI<a class="anchor-link" href="#TP-:-XML-TEI">&#182;</a></h1>
+</div>
+</div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>🌳 XML définit une syntaxe :</p>
-<ul>
-<li>une balise est écrite entre <code>&lt;...&gt;</code> et entoure un contenu ;</li>
-<li>une balise <strong>ouverte</strong> doit donc être <strong>fermée</strong> ;</li>
-<li>un commentaire est écrit entre <code>&lt;!-- ... --&gt;</code> ;</li>
+<h2 id="Ressources-pour-le-TP">Ressources pour le TP<a class="anchor-link" href="#Ressources-pour-le-TP">&#182;</a></h2><ul>
+<li><a href="https://github.com/alix-tz/EDL_typo_doc/tree/main/tp">https://github.com/alix-tz/EDL_typo_doc/tree/main/tp</a></li>
 </ul>
-<p>🌳 XML ne définit pas de vocabulaire : il n'indique pas quel nom doit être donné à une balise : <code>&lt;paragraph&gt;</code>, <code>&lt;paragraphe&gt;</code>, <code>&lt;para&gt;</code>, <code>&lt;para_ph&gt;</code>, <code>&lt;p&gt;</code> sont tous des noms de balises valides ;</p>
-<p>🌳 Il existe des <code>standards</code> qui définissent un vocabulaire (un ensemble de nom de balise) et des règles de structure à l'intérieur de la syntaxe XML :</p>
+<hr>
 <ul>
-<li><code>XML TEI</code> (<em>Text Encoding Initiative</em>) - description de documents textuels (1987)</li>
-<li><code>XML EAD</code> (<em>Encoded Archival Description</em>) - description archivistique (1998)</li>
-<li><code>XML ALTO</code> (<em>Analysed Layout and Text Object</em>) - description de la mise en page et du contenu d'un texte transcrit automatiquement (2004)</li>
-<li><code>XML SVG</code> (<em>Scalable Vector Graphics</em>) - descriptions d'images vectorielles (1999)</li>
+<li><p><a href="http://archivesetdocumentation.centrepompidou.fr/ead.html?id=FRM5050-X0031_0000147&amp;c=FRM5050-X0031_0000147_FRM5050-X003191032&amp;qid=eas1583333375986#!{%22content%22:[%22FRM5050-X0031_0000147_FRM5050-X003191441%22,false,%22eas1583333375986%22]}">Bibliothèque Kandinsky - Collection Fernand Léger - Correspondance de Fernand Léger à Simone Herman (1931-1953). - 1931-1932 - image 1</a></p>
+</li>
+<li><p>M5050_X0031_FGM_LEG_1_001_P.jpg</p>
+</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>A suivre</section></section>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Structure-minimale-obligatoire">Structure minimale obligatoire<a class="anchor-link" href="#Structure-minimale-obligatoire">&#182;</a></h2><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;TEI</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.tei-c.org/ns/1.0&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;teiHeader&gt;</span>
+      <span class="nt">&lt;fileDesc&gt;</span>
+         <span class="nt">&lt;titleStmt&gt;</span>
+            <span class="nt">&lt;title&gt;</span>Title<span class="nt">&lt;/title&gt;</span>
+         <span class="nt">&lt;/titleStmt&gt;</span>
+         <span class="nt">&lt;publicationStmt&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Publication Information<span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;/publicationStmt&gt;</span>
+         <span class="nt">&lt;sourceDesc&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Information about the source<span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;/sourceDesc&gt;</span>
+      <span class="nt">&lt;/fileDesc&gt;</span>
+  <span class="nt">&lt;/teiHeader&gt;</span>
+  <span class="nt">&lt;text&gt;</span>
+      <span class="nt">&lt;body&gt;</span>
+         <span class="nt">&lt;p&gt;</span>Some text here.<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/text&gt;</span>
+<span class="nt">&lt;/TEI&gt;</span>
+</pre></div>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Qu'annoter-?">Qu'annoter ?<a class="anchor-link" href="#Qu'annoter-?">&#182;</a></h2><ul>
+<li><p>Métadonnées dans la balise <a href="https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-teiHeader.html"><code>&lt;teiHeader&gt;</code></a></p>
+</li>
+<li><p>Structure du texte (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;lb/&gt;</code>, <code>&lt;pb/&gt;</code>, ...)</p>
+</li>
+<li><p>Entités ou informations spécifiques (<code>&lt;date&gt;</code>, <code>&lt;placeName&gt;</code>, ...)</p>
+</li>
+<li><p>Mise en forme (<code>&lt;hi&gt;</code>, ...)</p>
+</li>
+<li><p>Elements descriptifs (<code>&lt;fw&gt;</code>, ...)</p>
+</li>
+</ul>
+<hr>
+<p>➡️ exemple : <a href="https://raw.githubusercontent.com/alix-tz/EDL_typo_doc/main/tp/transcription_M5050_X0031_FGM_LEG_1_001_P.xml">https://raw.githubusercontent.com/alix-tz/EDL_typo_doc/main/tp/transcription_M5050_X0031_FGM_LEG_1_001_P.xml</a></p>
+
+</div>
+</div>
+</div></section></section>
 </div>
 </div>
 

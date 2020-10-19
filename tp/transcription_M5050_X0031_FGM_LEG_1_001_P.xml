@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Correspondance de Fernand Léger à Simone Herman (1931-1953). Lettre 1.</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Encodage TEI minimal réalisé dans le cadre du master Documentation et Humanités Numériques de l'Ecole du Louvre par Alix Chagué.</p>
+         </publicationStmt>
+         <sourceDesc>
+         	<p>Lettre conservée dans la collection Fernand Léger de la Bibliothèque Kandinsky</p>
+         	<p>Elle appartient au lot "Correspondance de Fernand Léger à Simone Herman (1931-1953)." et au sous-lot "1931-1932".</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+      	<div type="letter">
+	      	<pb n="001"/>
+	      	<div type="header">
+	      		<p>I</p>
+	      		<p><placeName>Bad Aussée</placeName>,</p>
+            	<date when="15-07-1931">15 Juillet 31</date>
+        	</div>
+        	<div type="main">
+	            <p>Chère Amie,</p>
+	            <p>Je suis enfermé dans les montagnes, dans la carte postale <lb/>dans la douce mélodie de la nature <hi rend="red_underscore">pompier</hi> et éternelle. </p>
+	            <div type="poem">
+	            	<head type="poem_title">Poème n° I</head>
+					<p>Je trouve idiot que cette montagne soit immobile elle devrait<lb/>se déplacer ou avoir des animaux qui l'anime, c'est mort. Je vou-<lb/><hi rend="handwritten">dr</hi>ais un magnifique serpent de 500 mètres de long, aux couleurs <lb/>changeantes qui se dérouler<hi rend="handwritten">ait</hi> dessus et à travers ces énormes <lb/>surfaces mortes, il occuperait l'esprit on le chercherait il se-<lb/>rait naturellement méchant son urine guérirait les aveugles par <lb/>exemple. On le déifierait. Il justifierait la montagne. Vous le <lb/>voyez mon serpent ?</p>
+					<p>l'hiver il aurait des plumes en forme de bouteilles de bière qui <lb/>brilleraient à la lune (pas au soleil) dans ses promenades ces <lb/>plumes-bouteilles se choqueraient et une <hi rend="handwritten">musique</hi> étrange et <lb/>raffinée se regarderait dans cette idiotie de montagne - les <lb/>disques Pathé enregistreraient cette mélodie que seuls les sourds- <lb/>et muets pourraient percevoir !</p>
+					<p>Pensez à mon serpent imaginez encore autre chose chère Amie, <lb/>écrivez-le moi.</p>
+					<p>Si cette histoire vous amuse je pourrai la continuer une <lb/>autre fois. C'est assez pour aujourd'hui.</p>
+					<p>Je vous embrasse comme je vous... le dis sur tout ce que... <lb/>ce qui... existe à Paris - 6 h. soir Taxi demi jour demi-<lb/>nuit. Souvenir - Paris.</p>
+					<p>Paris - Tour Eiffel<lb/>Invalides<lb/>le 86 - Souvenir<lb/>Notre-Dame du<lb/>86 en silhouette<lb/>fond bleu souvenir<lb/>Citroën dans le<lb/>fond. électricité<lb/>verticale. Souvenir</p>
+					<p>(Poème dit moderne, fait à <hi rend="handwritten">Aussée</hi>, Autriche)</p>
+				</div>
+			</div>
+			<div type="end">
+				<p>Tout votre</p>
+				<p>F. LEGER</p>
+			</div>
+			<fw type="stamp"/>
+		</div>
+      </body>
+  </text>
+</TEI>

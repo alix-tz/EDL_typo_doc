@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <div>
+            <pb n="16"/>
+            <head>LE PONT MIRABEAU</head>
+            <p>
+               <lb/>Sous le <placeName ref="https://www.wikidata.org/wiki/Q291093">pont Mirabeau</placeName> coule la <geogName ref="https://www.wikidata.org/wiki/Q1471">Seine</geogName>
+               <lb/>Et nos amours
+               <lb/>Faut-il qu'il m'en souvienne
+               <lb/>La joie venait toujours après la peine
+            </p>
+            <p>
+               <lb/>Vienne la nuit sonne l'heure
+               <lb/>Les jours s'en vont je demeure
+            </p>
+            
+            <p>
+               <lb/>Les mains dans les mains restons face à face
+               <lb/>Tandis que sous
+               <lb/>Le pont de nos bras passe
+               <lb/>Des éternels regards l'onde si lasse
+            </p>
+            <p>
+               <lb/>Vienne la nuit sonne l'heure
+               <lb/>Les jours s'en vont je demeure
+            </p>
+         </div>
+         <div type="foot">
+            <p>16</p>
+         </div>
+         <div type="front">
+            <p>ALCOOLS</p>
+         </div>
+         <div type="main">
+            <pb n="17"/>
+            <p>
+               <lb/>L'amour s'en va comme cette eau courante
+               <lb/>L'amour s'en va
+               <lb/>Comme la vie et lente
+               <lb/>Et comme l'Espérance est violente
+            </p>
+            <p>
+               <lb/>Vienne la nuit sonne l'heure
+               <lb/>Les jours s'en vont je demeure
+            </p>
+            <p>
+               <lb/>Passent les jours et passent les semaines
+               <lb/>Ni temps passé
+               <lb/>Ni les amours reviennent
+               <lb/>Sous le <placeName ref="https://www.wikidata.org/wiki/Q291093">pont Mirabeau</placeName> coule la <geogName ref="https://www.wikidata.org/wiki/Q1471">Seine</geogName>
+            </p>
+            <p>
+               <lb/>Vienne la nuit sonne l'heure
+               <lb/>Les jours s'en vont je demeure
+            </p>
+         </div>
+         <div type="foot">
+            <p>17</p>
+         </div>
+      </body>
+  </text>
+</TEI>
